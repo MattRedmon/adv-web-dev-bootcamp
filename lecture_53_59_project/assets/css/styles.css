@@ -1,7 +1,7 @@
 /* General Styles */
 
 * {
-  margin: 0;
+  margin: 0;             /* a reset - removes inconsistencies among browsers */
   padding: 0;
   box-sizing: border-box;
 }
@@ -11,21 +11,22 @@ html {
   color: #555;
 }
 
+
 nav {
-  list-style: none;
+  list-style: none;   /* removes bullet points */
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none;    /* removes default underline on links */
   opacity: 0.75;
   color: #fff;
 }
 
 a:hover {
-  opacity: 1;
+  opacity: 1;  /* with about code makes link dimmer until hovered over */
 }
 
-a.btn {
+a.btn {                         /* a tag with button class */
   border-radius: 4px;
   text-transform: uppercase;
   font-weight: bold;
@@ -45,12 +46,12 @@ section {
 
 header {
   position: absolute;
-  width: 100p;
-  display: flex;
+  width: 100%;
+  display: flex;                   /* choose to use flexbox for header */
   justify-content: space-between;
   align-items: center;
   padding: 35px 100px 0;
-  animation: 1s fadein 0.5s forwards;
+  animation: 1s fadein 0.5s forwards;   /* CSS transition, needs keyframes added below */
   opacity: 0;
   color: #fff;
 }
@@ -63,38 +64,38 @@ header {
 }
 
 
-header h2 {
+header h2 {                               /* h2 tag within the header tag */
   font-family: "Quicksand", sans-serif
 }
 
-header nav {
+header nav {                          /* nav tag within header tag */
   display: flex;
   margin-right: -15px;
 }
 
-header nav li {
+header nav li {       /* list tag within both nav and header tags  */
   margin: 0 15px;
 }
 
 /* Hero Styles */
 
-.hero {
+.hero {                   /* this covers the entire section tag with class of hero */
   position: relative;
   justify-content: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 100vh;    /* 100% of viewport */
   color: #fff;
 }
 
-.hero .background-image {
-  position: absolute;
+.hero .background-image {     /* this is the div inside of section tag for the background image */
+  position: absolute;   /* the next 5 lines position the background image in the div */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
-  z-index: -1;
-  background-color: #80a3db;
+  z-index: -1;              /* this pushes the image behind everything else */
+  background-color: #80a3db;   /* adds background color based on image so won't see a white flicker when image loads */
 }
 
 .hero h1 {
@@ -111,10 +112,11 @@ header nav li {
   padding: 20px 46px;
 }
 
-.hero-content-area {
-  opacity: 0;
-  margin-top: 100px;
-  animation: 1s slidefade 1s forwards;
+.hero-content-area {       /* div within section that sits on top of background image */
+                           /* contains the h1, h3, and btn tags */
+  opacity: 0;          /* this with keyframes below transitions the center content from transparent to completely opaque */
+  margin-top: 100px;   /* this positions center content lower than final position and with below slide content up as it becomes opaque */
+  animation: 1s slidefade 1s forwards;   /* transition that slowly fades in content, keyframes below required */
 }
 
 @keyframes slidefade {
